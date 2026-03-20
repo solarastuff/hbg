@@ -1,0 +1,153 @@
+local Starlight = loadstring(game:HttpGet("https://raw.nebulasoftworks.xyz/starlight"))()  
+
+local NebulaIcons = loadstring(game:HttpGet("https://raw.nebulasoftworks.xyz/nebula-icon-library-loader"))()
+
+local Window = Starlight:CreateWindow({
+    Name = "MyScript",
+    Subtitle = "v1.0",
+    Icon = 123456789,
+
+    LoadingSettings = {
+        Title = "My Script Hub",
+        Subtitle = "Welcome to My Script Hub",
+    },
+
+    FileSettings = {
+        ConfigFolder = "MyScript"
+    },
+})
+
+local TabSection = Window:CreateTabSection("Tab Section")
+
+local Tab = TabSection:CreateTab({
+    Name = "Tab",
+    Icon = NebulaIcons:GetIcon('view_in_ar', 'Material'),
+    Columns = 2,
+}, "INDEX")
+
+local Groupbox = Tab:CreateGroupbox({
+    Name = "Groupbox",
+    Column = 1,
+}, "INDEX") 
+
+local Dialog = Window:PromptDialog({
+    Name = "Header",
+    Content = "Description",
+    Type = 1,
+    Actions = { 
+        Primary = {
+            Name = "Okay!",
+            Icon = NebulaIcons:GetIcon("check", "Material"),
+            Callback = function()
+
+            end
+        }, 
+        {
+            Name = "Cancel",
+            Callback = function()
+
+            end
+        },
+    }
+})
+
+local Notifications = Starlight:Notification({
+    Title = "Notification",
+    Icon = NebulaIcons:GetIcon('sparkle', 'Material'),
+    Content = "This is the same as a paragraph, where it auto sizes.",
+}, "INDEX")
+
+local Button = Groupbox:CreateButton({
+    Name = "Button",
+    Icon = NebulaIcons:GetIcon('check', 'Material'),
+    Style = 1,
+    Callback = function()
+
+    end,
+}, "INDEX")
+
+local Button = Groupbox:CreateButton({
+    Name = "Button",
+    Icon = NebulaIcons:GetIcon('check', 'Material'),
+    Style = 2, 
+    Callback = function()
+
+    end,
+}, "INDEX")
+
+ local Toggle = Groupbox:CreateToggle({
+    Name = "Toggle",
+    CurrentValue = false,
+    Style = 2,
+    Callback = function(Value)
+
+    end,
+}, "INDEX")
+
+local Toggle = Groupbox:CreateToggle({
+    Name = "Toggle",
+    CurrentValue = false,
+    Style = 1,
+    Callback = function(Value)
+
+    end,
+}, "INDEX")
+
+local Slider = Groupbox:CreateSlider({
+    Name = "Slider",
+    Icon = NebulaIcons:GetIcon('chart-no-axes-column-increasing', 'Lucide'),
+    Range = {0,100},
+    Increment = 1,
+    Callback = function(Value)
+
+    end,
+}, "INDEX")
+
+local Input = Groupbox:CreateInput({
+    Name = "Dynamic Input",
+    Icon = NebulaIcons:GetIcon('text-cursor-input', 'Lucide'),
+    CurrentValue = "",
+    PlaceholderText = "Placeholder Text",
+    Callback = function(Text)
+
+    end,
+}, "INDEX")
+
+local Label = Groupbox:CreateLabel({
+    Name = "Label"
+}, "INDadadwadawadEX")
+
+local Paragraph = Groupbox:CreateParagraph({
+    Name = "Paragraph",
+    Content = "Hello!! Im A Paragraph, and i can store bunch of text. \nI also grow bigger or smaller depending on how much text is in my body! \nLike this, i am a much bigger paragraph than the other one! i also support multi lines with the\n character set.",
+
+}, "INDEX")
+
+local Bind = Label:AddBind({
+    HoldToInteract = false,
+    CurrentValue = "Q",
+    Callback = function(Value)
+
+    end,
+}, "INDadadEX")
+
+local ColorPicker = Label:AddColorPicker({
+    CurrentValue = Color3.fromRGB(33,217,64),
+    
+    Callback = function(Color)
+
+    end,
+}, "INDEX")
+
+local Dropdown = Label:AddDropdown({
+    Options = {"Option 1", "Option 2"},
+    CurrentOptions = {"Option 1"},
+    Placeholder = "None Selected",
+    Callback = function(Options)
+        
+    end,
+}, "INDEX")
+
+local Divider = Groupbox:CreateDivider()
+
+Tab:BuildThemeGroupbox(1)
